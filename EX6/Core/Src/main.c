@@ -90,10 +90,10 @@ int main(void)
 		  LED_5_Pin, LED_6_Pin, LED_7_Pin, LED_8_Pin,
 		  LED_9_Pin, LED_10_Pin, LED_11_Pin, LED_12_Pin};
   void testLed(int num){
-	  HAL_GPIO_WritePin(GPIOA, LED_1_Pin| LED_2_Pin| LED_3_Pin| LED_4_Pin|
+	HAL_GPIO_WritePin(GPIOA, LED_1_Pin| LED_2_Pin| LED_3_Pin| LED_4_Pin|
 	      				  LED_5_Pin| LED_6_Pin| LED_7_Pin| LED_8_Pin|
 	      				  LED_9_Pin| LED_10_Pin| LED_11_Pin| LED_12_Pin, 1);
-	  	  HAL_GPIO_WritePin(GPIOA, ledPin[num], 0);
+	HAL_GPIO_WritePin(GPIOA, ledPin[num], 0);
   }
   /* USER CODE END 2 */
 
@@ -102,7 +102,6 @@ int main(void)
 
   while (1)
   {
-
 	  for (int i = 0; i < 12; i++){
 		  testLed(i);
 		  HAL_Delay(2000);

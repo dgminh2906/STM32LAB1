@@ -54,27 +54,27 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-	uint16_t ledPin[12] = {LED_1_Pin, LED_2_Pin, LED_3_Pin, LED_4_Pin,
+unsigned int ledPin[12] = {LED_1_Pin, LED_2_Pin, LED_3_Pin, LED_4_Pin,
 		  LED_5_Pin, LED_6_Pin, LED_7_Pin, LED_8_Pin,
 		  LED_9_Pin, LED_10_Pin, LED_11_Pin, LED_12_Pin};
-  void clearAllClock(){
-      HAL_GPIO_WritePin(GPIOA, LED_1_Pin| LED_2_Pin| LED_3_Pin| LED_4_Pin| LED_5_Pin|
+void clearAllClock(){
+	HAL_GPIO_WritePin(GPIOA, LED_1_Pin| LED_2_Pin| LED_3_Pin| LED_4_Pin| LED_5_Pin|
     		  LED_6_Pin| LED_7_Pin| LED_8_Pin| LED_9_Pin| LED_10_Pin| LED_11_Pin| LED_12_Pin, 1);
-  }
+}
 
-  void setNumberOnClock(int num){
-      HAL_GPIO_WritePin(GPIOA, ledPin[num], 0);
-  }
+void setNumberOnClock(int num){
+      	HAL_GPIO_WritePin(GPIOA, ledPin[num], 0);
+}
 
-  void clearNumberOnClock(int num){
-      HAL_GPIO_WritePin(GPIOA, ledPin[num], 1);
-  }
+void clearNumberOnClock(int num){
+	HAL_GPIO_WritePin(GPIOA, ledPin[num], 1);
+}
 
-  void setTime(int hour, int minute, int second){
-      setNumberOnClock(hour);
-      setNumberOnClock(minute/5);
-      setNumberOnClock(second/5);
-  }
+void setTime(int hour, int minute, int second){
+	setNumberOnClock(hour);
+      	setNumberOnClock(minute/5);
+      	setNumberOnClock(second/5);
+}
 /* USER CODE END 0 */
 
 /**
